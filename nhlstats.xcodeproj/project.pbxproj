@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		8B28541523BD5AF800140CC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B28541423BD5AF800140CC9 /* AppDelegate.swift */; };
 		8B28541723BD5AF800140CC9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B28541623BD5AF800140CC9 /* SceneDelegate.swift */; };
-		8B28541923BD5AF800140CC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B28541823BD5AF800140CC9 /* ViewController.swift */; };
+		8B28541923BD5AF800140CC9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B28541823BD5AF800140CC9 /* LoginViewController.swift */; };
 		8B28541C23BD5AF800140CC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B28541A23BD5AF800140CC9 /* Main.storyboard */; };
 		8B28541F23BD5AF800140CC9 /* nhlstats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B28541D23BD5AF800140CC9 /* nhlstats.xcdatamodeld */; };
 		8B28542123BD5AF900140CC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B28542023BD5AF900140CC9 /* Assets.xcassets */; };
@@ -31,7 +31,7 @@
 		8B28541123BD5AF800140CC9 /* nhlstats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nhlstats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B28541423BD5AF800140CC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B28541623BD5AF800140CC9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8B28541823BD5AF800140CC9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8B28541823BD5AF800140CC9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8B28541B23BD5AF800140CC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8B28541E23BD5AF800140CC9 /* nhlstats.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = nhlstats.xcdatamodel; sourceTree = "<group>"; };
 		8B28542023BD5AF900140CC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,9 +81,9 @@
 		8B28541323BD5AF800140CC9 /* nhlstats */ = {
 			isa = PBXGroup;
 			children = (
+				8BE2C31C23C01CCB00403C15 /* Login */,
 				8B28541423BD5AF800140CC9 /* AppDelegate.swift */,
 				8B28541623BD5AF800140CC9 /* SceneDelegate.swift */,
-				8B28541823BD5AF800140CC9 /* ViewController.swift */,
 				8B28541A23BD5AF800140CC9 /* Main.storyboard */,
 				8B28542023BD5AF900140CC9 /* Assets.xcassets */,
 				8B28542223BD5AF900140CC9 /* LaunchScreen.storyboard */,
@@ -100,6 +100,14 @@
 				8B28543023BD5AF900140CC9 /* Info.plist */,
 			);
 			path = nhlstatsTests;
+			sourceTree = "<group>";
+		};
+		8BE2C31C23C01CCB00403C15 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				8B28541823BD5AF800140CC9 /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,7 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B28541923BD5AF800140CC9 /* ViewController.swift in Sources */,
+				8B28541923BD5AF800140CC9 /* LoginViewController.swift in Sources */,
 				8B28541523BD5AF800140CC9 /* AppDelegate.swift in Sources */,
 				8B28541F23BD5AF800140CC9 /* nhlstats.xcdatamodeld in Sources */,
 				8B28541723BD5AF800140CC9 /* SceneDelegate.swift in Sources */,
