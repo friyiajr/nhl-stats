@@ -18,6 +18,11 @@
 		8B28542F23BD5AF900140CC9 /* nhlstatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B28542E23BD5AF900140CC9 /* nhlstatsTests.swift */; };
 		8B563C1023C13CF30086CAE7 /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B563C0F23C13CF30086CAE7 /* TeamsViewController.swift */; };
 		8B7E889EA1330CB9A198F59E /* Pods_nhlstatsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06585F896A6FD2DF64D0BCB1 /* Pods_nhlstatsTests.framework */; };
+		8B9F653023C23C4C0093FE10 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9F652F23C23C4C0093FE10 /* LoginViewModel.swift */; };
+		8B9F653623C23D5C0093FE10 /* NetworkingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9F653523C23D5C0093FE10 /* NetworkingConstants.swift */; };
+		8B9F653923C24B600093FE10 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9F653823C24B600093FE10 /* Team.swift */; };
+		8B9F653C23C2641D0093FE10 /* DictionaryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9F653B23C2641D0093FE10 /* DictionaryExtensions.swift */; };
+		8B9F653F23C274990093FE10 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9F653E23C274990093FE10 /* State.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		8B28542E23BD5AF900140CC9 /* nhlstatsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nhlstatsTests.swift; sourceTree = "<group>"; };
 		8B28543023BD5AF900140CC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B563C0F23C13CF30086CAE7 /* TeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
+		8B9F652F23C23C4C0093FE10 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		8B9F653523C23D5C0093FE10 /* NetworkingConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingConstants.swift; sourceTree = "<group>"; };
+		8B9F653823C24B600093FE10 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		8B9F653B23C2641D0093FE10 /* DictionaryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtensions.swift; sourceTree = "<group>"; };
+		8B9F653E23C274990093FE10 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		A5859B1725EB1B42B1CCC9D4 /* Pods-nhlstats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nhlstats.debug.xcconfig"; path = "Target Support Files/Pods-nhlstats/Pods-nhlstats.debug.xcconfig"; sourceTree = "<group>"; };
 		A871F456CB795C3617F42227 /* Pods-nhlstats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nhlstats.release.xcconfig"; path = "Target Support Files/Pods-nhlstats/Pods-nhlstats.release.xcconfig"; sourceTree = "<group>"; };
 		AF4975A8A7C2AD21BF1DAE27 /* Pods_nhlstats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nhlstats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +116,9 @@
 		8B28541323BD5AF800140CC9 /* nhlstats */ = {
 			isa = PBXGroup;
 			children = (
+				8B9F653D23C2748D0093FE10 /* State */,
+				8B9F653723C24B520093FE10 /* Models */,
+				8B9F653123C23D2A0093FE10 /* Helpers */,
 				8B563C0E23C13CD30086CAE7 /* TeamsView */,
 				8BE2C31C23C01CCB00403C15 /* Login */,
 				8B28541423BD5AF800140CC9 /* AppDelegate.swift */,
@@ -136,10 +149,52 @@
 			path = TeamsView;
 			sourceTree = "<group>";
 		};
+		8B9F653123C23D2A0093FE10 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8B9F653A23C2640E0093FE10 /* Extensions */,
+				8B9F653423C23D460093FE10 /* Constants */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		8B9F653423C23D460093FE10 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				8B9F653523C23D5C0093FE10 /* NetworkingConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		8B9F653723C24B520093FE10 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8B9F653823C24B600093FE10 /* Team.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8B9F653A23C2640E0093FE10 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8B9F653B23C2641D0093FE10 /* DictionaryExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8B9F653D23C2748D0093FE10 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				8B9F653E23C274990093FE10 /* State.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
 		8BE2C31C23C01CCB00403C15 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				8B28541823BD5AF800140CC9 /* LoginViewController.swift */,
+				8B9F652F23C23C4C0093FE10 /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -341,6 +396,11 @@
 			files = (
 				8B28541923BD5AF800140CC9 /* LoginViewController.swift in Sources */,
 				8B28541523BD5AF800140CC9 /* AppDelegate.swift in Sources */,
+				8B9F653C23C2641D0093FE10 /* DictionaryExtensions.swift in Sources */,
+				8B9F653F23C274990093FE10 /* State.swift in Sources */,
+				8B9F653023C23C4C0093FE10 /* LoginViewModel.swift in Sources */,
+				8B9F653623C23D5C0093FE10 /* NetworkingConstants.swift in Sources */,
+				8B9F653923C24B600093FE10 /* Team.swift in Sources */,
 				8B28541F23BD5AF800140CC9 /* nhlstats.xcdatamodeld in Sources */,
 				8B563C1023C13CF30086CAE7 /* TeamsViewController.swift in Sources */,
 				8B28541723BD5AF800140CC9 /* SceneDelegate.swift in Sources */,
