@@ -12,11 +12,11 @@ class TeamsViewController: UIViewController {
     
     @IBOutlet var rootView: UIView!
     
-    let kRowSize: CGFloat = 75.0
+    let kRowSize: Int = 75
     let numOfTeams: Int = 10
     
     var scrollView: UIScrollView!
-    var currentDistanceFromTop: CGFloat = 90.0
+    var currentDistanceFromTop: Int = 90
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +31,16 @@ class TeamsViewController: UIViewController {
         let screenHeight = rootView.frame.size.height
         
         self.scrollView = UIScrollView()
-        self.scrollView.backgroundColor = UIColor(red: 0.15, green: 0.15, blue: 0.15, alpha: 1.00)
-        self.scrollView.contentSize = CGSize(width: screenWidth, height: 1000.0)
+        
+        self.scrollView.backgroundColor = UIColor(
+            red: 0.15,
+            green: 0.15,
+            blue: 0.15,
+            alpha: 1.00)
+        
+        self.scrollView.contentSize = CGSize(
+            width: screenWidth,
+            height: CGFloat((State.shared.allTeamsArray.count + 3) * kRowSize))
         
         self.view.addSubview(self.scrollView)
 
@@ -131,7 +139,7 @@ class TeamsViewController: UIViewController {
             toItem: self.scrollView,
             attribute: NSLayoutConstraint.Attribute.top,
             multiplier: 1,
-            constant: currentDistanceFromTop)
+            constant: CGFloat(currentDistanceFromTop))
 
         let widthConstraint = NSLayoutConstraint(
             item: header,
@@ -191,9 +199,9 @@ class TeamsViewController: UIViewController {
         currentDistanceFromTop += 21
     }
     
-    func addTitleToRow(newRow: UIView) -> Void {
+    func addTitleToRow(newRow: UIView, team: Team) -> Void {
         let label: UILabel = UILabel()
-        label.text = "Edmonton Oilers"
+        label.text = "\(team.shortName) \(team.teamName)"
         label.font = UIFont(name: label.font.fontName, size: 20)
         label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -206,7 +214,7 @@ class TeamsViewController: UIViewController {
             toItem: newRow,
             attribute: NSLayoutConstraint.Attribute.centerX,
             multiplier: 1,
-            constant: -40)
+            constant: 0)
         
         let verticalConstraintForLabel = NSLayoutConstraint(
             item: label,
@@ -297,7 +305,7 @@ class TeamsViewController: UIViewController {
             toItem: self.scrollView,
             attribute: NSLayoutConstraint.Attribute.top,
             multiplier: 1,
-            constant: currentDistanceFromTop)
+            constant: CGFloat(currentDistanceFromTop))
 
         let widthConstraint = NSLayoutConstraint(
             item: newRow,
@@ -315,7 +323,7 @@ class TeamsViewController: UIViewController {
             toItem: nil,
             attribute: NSLayoutConstraint.Attribute.notAnAttribute,
             multiplier: 1,
-            constant: kRowSize)
+            constant: CGFloat(kRowSize))
 
         self.scrollView.addConstraints([
             verticalConstraint,
@@ -378,26 +386,19 @@ class TeamsViewController: UIViewController {
         ])
     }
     
-    func generateRowItems() -> Void {
+    func generateRowItems(team: Team) -> Void {
         let newRow: UIView = generateRowBody()
         addImageToRow(newRow: newRow)
-        addTitleToRow(newRow: newRow)
+        addTitleToRow(newRow: newRow, team: team)
         addStarToRow(newRow: newRow)
         currentDistanceFromTop += kRowSize
     }
     
     func createAllTeamsView() -> Void {
         createRowHeader(title: "Teams")
-        generateRowItems()
-        generateRowItems()
-        generateRowItems()
-        generateRowItems()
-        generateRowItems()
-        generateRowItems()
-        generateRowItems()
-        generateRowItems()
-        generateRowItems()
-        generateRowItems()
-        generateRowItems()
+        
+        for team in State.shared.allTeamsArray {
+            generateRowItems(team: team)
+        }
     }
 }
