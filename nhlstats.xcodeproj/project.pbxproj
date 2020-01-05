@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		8B28542123BD5AF900140CC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B28542023BD5AF900140CC9 /* Assets.xcassets */; };
 		8B28542423BD5AF900140CC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B28542223BD5AF900140CC9 /* LaunchScreen.storyboard */; };
 		8B28542F23BD5AF900140CC9 /* nhlstatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B28542E23BD5AF900140CC9 /* nhlstatsTests.swift */; };
+		8B563C1023C13CF30086CAE7 /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B563C0F23C13CF30086CAE7 /* TeamsViewController.swift */; };
 		8B7E889EA1330CB9A198F59E /* Pods_nhlstatsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06585F896A6FD2DF64D0BCB1 /* Pods_nhlstatsTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		8B28542A23BD5AF900140CC9 /* nhlstatsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nhlstatsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B28542E23BD5AF900140CC9 /* nhlstatsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nhlstatsTests.swift; sourceTree = "<group>"; };
 		8B28543023BD5AF900140CC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B563C0F23C13CF30086CAE7 /* TeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
 		A5859B1725EB1B42B1CCC9D4 /* Pods-nhlstats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nhlstats.debug.xcconfig"; path = "Target Support Files/Pods-nhlstats/Pods-nhlstats.debug.xcconfig"; sourceTree = "<group>"; };
 		A871F456CB795C3617F42227 /* Pods-nhlstats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nhlstats.release.xcconfig"; path = "Target Support Files/Pods-nhlstats/Pods-nhlstats.release.xcconfig"; sourceTree = "<group>"; };
 		AF4975A8A7C2AD21BF1DAE27 /* Pods_nhlstats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nhlstats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,7 +80,6 @@
 				5E219B1DAC1DE635C2C9DC87 /* Pods-nhlstatsTests.debug.xcconfig */,
 				7517F68AFA2DAC87206C8A99 /* Pods-nhlstatsTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -105,6 +106,7 @@
 		8B28541323BD5AF800140CC9 /* nhlstats */ = {
 			isa = PBXGroup;
 			children = (
+				8B563C0E23C13CD30086CAE7 /* TeamsView */,
 				8BE2C31C23C01CCB00403C15 /* Login */,
 				8B28541423BD5AF800140CC9 /* AppDelegate.swift */,
 				8B28541623BD5AF800140CC9 /* SceneDelegate.swift */,
@@ -124,6 +126,14 @@
 				8B28543023BD5AF900140CC9 /* Info.plist */,
 			);
 			path = nhlstatsTests;
+			sourceTree = "<group>";
+		};
+		8B563C0E23C13CD30086CAE7 /* TeamsView */ = {
+			isa = PBXGroup;
+			children = (
+				8B563C0F23C13CF30086CAE7 /* TeamsViewController.swift */,
+			);
+			path = TeamsView;
 			sourceTree = "<group>";
 		};
 		8BE2C31C23C01CCB00403C15 /* Login */ = {
@@ -332,6 +342,7 @@
 				8B28541923BD5AF800140CC9 /* LoginViewController.swift in Sources */,
 				8B28541523BD5AF800140CC9 /* AppDelegate.swift in Sources */,
 				8B28541F23BD5AF800140CC9 /* nhlstats.xcdatamodeld in Sources */,
+				8B563C1023C13CF30086CAE7 /* TeamsViewController.swift in Sources */,
 				8B28541723BD5AF800140CC9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
