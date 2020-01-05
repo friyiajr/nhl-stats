@@ -206,7 +206,7 @@ class TeamsViewController: UIViewController {
             toItem: newRow,
             attribute: NSLayoutConstraint.Attribute.centerX,
             multiplier: 1,
-            constant: 0)
+            constant: -40)
         
         let verticalConstraintForLabel = NSLayoutConstraint(
             item: label,
@@ -225,7 +225,7 @@ class TeamsViewController: UIViewController {
     
     func addImageToRow(newRow: UIView) -> Void {
         // Add contents to the row
-        let image = UIImage(named: "nhl-logo")
+        let image = UIImage(named: "oilers")
         let imageView = UIImageView(image: image!)
         newRow.addSubview(imageView)
         
@@ -256,7 +256,7 @@ class TeamsViewController: UIViewController {
             toItem: nil,
             attribute: NSLayoutConstraint.Attribute.notAnAttribute,
             multiplier: 1,
-            constant: 50)
+            constant: 45)
         
         let widthConstraintForImage = NSLayoutConstraint(
             item: imageView,
@@ -265,7 +265,7 @@ class TeamsViewController: UIViewController {
             toItem: nil,
             attribute: NSLayoutConstraint.Attribute.notAnAttribute,
             multiplier: 1,
-            constant: 50)
+            constant: 45)
 
         newRow.addConstraints([
             horizontalConstraintForImage,
@@ -326,10 +326,63 @@ class TeamsViewController: UIViewController {
         return newRow;
     }
     
+    func addStarToRow(newRow: UIView) -> Void {
+        // Add contents to the row
+        let image = UIImage(named: "outline-star")
+        let imageView = UIImageView(image: image!)
+        newRow.addSubview(imageView)
+        
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        let horizontalConstraintForImage = NSLayoutConstraint(
+            item: imageView,
+            attribute: NSLayoutConstraint.Attribute.right,
+            relatedBy: NSLayoutConstraint.Relation.equal,
+            toItem: newRow,
+            attribute: NSLayoutConstraint.Attribute.right,
+            multiplier: 1,
+            constant: -10)
+
+        let verticalConstraintForImage = NSLayoutConstraint(
+            item: imageView,
+            attribute: NSLayoutConstraint.Attribute.centerY,
+            relatedBy: NSLayoutConstraint.Relation.equal,
+            toItem: newRow,
+            attribute: NSLayoutConstraint.Attribute.centerY,
+            multiplier: 1,
+            constant: 0)
+        
+        let heightConstraintForImage = NSLayoutConstraint(
+            item: imageView,
+            attribute: NSLayoutConstraint.Attribute.height,
+            relatedBy: NSLayoutConstraint.Relation.equal,
+            toItem: nil,
+            attribute: NSLayoutConstraint.Attribute.notAnAttribute,
+            multiplier: 1,
+            constant: 35)
+        
+        let widthConstraintForImage = NSLayoutConstraint(
+            item: imageView,
+            attribute: NSLayoutConstraint.Attribute.width,
+            relatedBy: NSLayoutConstraint.Relation.equal,
+            toItem: nil,
+            attribute: NSLayoutConstraint.Attribute.notAnAttribute,
+            multiplier: 1,
+            constant: 35)
+
+        newRow.addConstraints([
+            horizontalConstraintForImage,
+            verticalConstraintForImage,
+            widthConstraintForImage,
+            heightConstraintForImage,
+        ])
+    }
+    
     func generateRowItems() -> Void {
         let newRow: UIView = generateRowBody()
         addImageToRow(newRow: newRow)
         addTitleToRow(newRow: newRow)
+        addStarToRow(newRow: newRow)
         currentDistanceFromTop += kRowSize
     }
     
@@ -346,6 +399,5 @@ class TeamsViewController: UIViewController {
         generateRowItems()
         generateRowItems()
         generateRowItems()
-        
     }
 }
