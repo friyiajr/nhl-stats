@@ -14,8 +14,8 @@
             filePath = "nhlstatsTests/Pages/TeamsInfo/TeamInfoViewModelTest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "spec()"
             landmarkType = "7">
          </BreakpointContent>

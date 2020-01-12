@@ -9,14 +9,12 @@
 import Foundation
 
 import Foundation
-import Quick
 import Nimble
-
+import Quick
 
 class TeamsModelTest: QuickSpec {
     override func spec() {
         describe("TeamsModelTest Tests") {
-            
             let mockJson: [String: Any] = [
                 "id": 1,
                 "link": "/api/v1/rangers",
@@ -27,24 +25,23 @@ class TeamsModelTest: QuickSpec {
                         "splits": [
                             [
                                 "stat":
-                                [
-                                     "wins": Int(10),
-                                     "losses": Int(5),
-                                     "goalsPerGame": Double(1.123),
-                                     "shotsPerGame": Double(4.123),
-                                     "shootingPctg": Double(0.123)
-                                ]
-                            ]
-                        ]
-                    ]
-                ]
+                                    [
+                                        "wins": Int(10),
+                                        "losses": Int(5),
+                                        "goalsPerGame": Double(1.123),
+                                        "shotsPerGame": Double(4.123),
+                                        "shootingPctg": Double(0.123),
+                                    ],
+                            ],
+                        ],
+                    ],
+                ],
             ]
-            
+
             describe("init") {
                 it("should create the team model from JSON documents") {
-
                     let team: Team = Team(json: mockJson)
-                    
+
                     expect(team.id).to(equal(1))
                     expect(team.shortName).to(equal("NY"))
                     expect(team.teamName).to(equal("Rangers"))
@@ -53,10 +50,9 @@ class TeamsModelTest: QuickSpec {
                     expect(team.goalsPerGame).to(equal(1.123))
                     expect(team.shotsPerGame).to(equal(4.123))
                     expect(team.shootingPctg).to(equal(0.123))
-                       
                 }
             }
-            
+
             describe("fullTeamName") {
                 it("should return the name of the team") {
                     let team: Team = Team(json: mockJson)
