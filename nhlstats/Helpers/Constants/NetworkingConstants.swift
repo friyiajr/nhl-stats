@@ -16,6 +16,7 @@ class NetworkingConstants {
     static let PEOPLE_ENDPOINT = "/people/"
     static let TEAMS_ENDPOINT = "/teams/"
     static let STATS_ENDPOINT = "/stats/"
+    static let ROSTER_ENDPOINT = "/roster/"
     
     static let API_URL = "\(BASE_URL)\(API_LINK)"
 }

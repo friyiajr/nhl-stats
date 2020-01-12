@@ -38,4 +38,10 @@ class Team {
         self.shotsPerGame = statsJson["shotsPerGame"] as! Double
         self.shootingPctg = statsJson["shootingPctg"] as! Double
     }
+    
+    var fullTeamName: String {
+        get {
+            return "\(shortName) \(teamName)"
+        }
+    }
 }

@@ -15,8 +15,15 @@
 		8B28541F23BD5AF800140CC9 /* nhlstats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B28541D23BD5AF800140CC9 /* nhlstats.xcdatamodeld */; };
 		8B28542123BD5AF900140CC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B28542023BD5AF900140CC9 /* Assets.xcassets */; };
 		8B28542423BD5AF900140CC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B28542223BD5AF900140CC9 /* LaunchScreen.storyboard */; };
-		8B28542F23BD5AF900140CC9 /* nhlstatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B28542E23BD5AF900140CC9 /* nhlstatsTests.swift */; };
 		8B563C1023C13CF30086CAE7 /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B563C0F23C13CF30086CAE7 /* TeamsViewController.swift */; };
+		8B77737D23CA68BD00789DA5 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77737C23CA68BD00789DA5 /* TeamTableViewCell.swift */; };
+		8B77737F23CA6F7200789DA5 /* TeamsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77737E23CA6F7200789DA5 /* TeamsViewModel.swift */; };
+		8B77738223CA7FD100789DA5 /* TeamInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77738123CA7FD100789DA5 /* TeamInfoViewController.swift */; };
+		8B77738423CA801000789DA5 /* TeamInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77738323CA801000789DA5 /* TeamInfoViewModel.swift */; };
+		8B77738723CA8FEB00789DA5 /* TeamInfoViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77738623CA8FEB00789DA5 /* TeamInfoViewModelTest.swift */; };
+		8B77738823CAA02100789DA5 /* TeamInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77738323CA801000789DA5 /* TeamInfoViewModel.swift */; };
+		8B77738C23CAA09100789DA5 /* TeamsModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77738B23CAA09100789DA5 /* TeamsModelTest.swift */; };
+		8B77738E23CAA0A800789DA5 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9F653823C24B600093FE10 /* Team.swift */; };
 		8B7E889EA1330CB9A198F59E /* Pods_nhlstatsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06585F896A6FD2DF64D0BCB1 /* Pods_nhlstatsTests.framework */; };
 		8B9F653023C23C4C0093FE10 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9F652F23C23C4C0093FE10 /* LoginViewModel.swift */; };
 		8B9F653623C23D5C0093FE10 /* NetworkingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9F653523C23D5C0093FE10 /* NetworkingConstants.swift */; };
@@ -49,9 +56,14 @@
 		8B28542323BD5AF900140CC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B28542523BD5AF900140CC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B28542A23BD5AF900140CC9 /* nhlstatsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nhlstatsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B28542E23BD5AF900140CC9 /* nhlstatsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nhlstatsTests.swift; sourceTree = "<group>"; };
 		8B28543023BD5AF900140CC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B563C0F23C13CF30086CAE7 /* TeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
+		8B77737C23CA68BD00789DA5 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
+		8B77737E23CA6F7200789DA5 /* TeamsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewModel.swift; sourceTree = "<group>"; };
+		8B77738123CA7FD100789DA5 /* TeamInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoViewController.swift; sourceTree = "<group>"; };
+		8B77738323CA801000789DA5 /* TeamInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoViewModel.swift; sourceTree = "<group>"; };
+		8B77738623CA8FEB00789DA5 /* TeamInfoViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfoViewModelTest.swift; sourceTree = "<group>"; };
+		8B77738B23CAA09100789DA5 /* TeamsModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsModelTest.swift; sourceTree = "<group>"; };
 		8B9F652F23C23C4C0093FE10 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8B9F653523C23D5C0093FE10 /* NetworkingConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingConstants.swift; sourceTree = "<group>"; };
 		8B9F653823C24B600093FE10 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
@@ -116,6 +128,7 @@
 		8B28541323BD5AF800140CC9 /* nhlstats */ = {
 			isa = PBXGroup;
 			children = (
+				8B77738023CA7FA500789DA5 /* TeamInfo */,
 				8B9F653D23C2748D0093FE10 /* State */,
 				8B9F653723C24B520093FE10 /* Models */,
 				8B9F653123C23D2A0093FE10 /* Helpers */,
@@ -135,7 +148,8 @@
 		8B28542D23BD5AF900140CC9 /* nhlstatsTests */ = {
 			isa = PBXGroup;
 			children = (
-				8B28542E23BD5AF900140CC9 /* nhlstatsTests.swift */,
+				8B77738A23CAA07E00789DA5 /* Models */,
+				8B77738923CAA07100789DA5 /* Pages */,
 				8B28543023BD5AF900140CC9 /* Info.plist */,
 			);
 			path = nhlstatsTests;
@@ -145,8 +159,51 @@
 			isa = PBXGroup;
 			children = (
 				8B563C0F23C13CF30086CAE7 /* TeamsViewController.swift */,
+				8B77737C23CA68BD00789DA5 /* TeamTableViewCell.swift */,
+				8B77737E23CA6F7200789DA5 /* TeamsViewModel.swift */,
 			);
 			path = TeamsView;
+			sourceTree = "<group>";
+		};
+		8B77738023CA7FA500789DA5 /* TeamInfo */ = {
+			isa = PBXGroup;
+			children = (
+				8B77738123CA7FD100789DA5 /* TeamInfoViewController.swift */,
+				8B77738323CA801000789DA5 /* TeamInfoViewModel.swift */,
+			);
+			path = TeamInfo;
+			sourceTree = "<group>";
+		};
+		8B77738523CA8FB100789DA5 /* TeamsInfo */ = {
+			isa = PBXGroup;
+			children = (
+				8B77738623CA8FEB00789DA5 /* TeamInfoViewModelTest.swift */,
+			);
+			path = TeamsInfo;
+			sourceTree = "<group>";
+		};
+		8B77738923CAA07100789DA5 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				8B77738523CA8FB100789DA5 /* TeamsInfo */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		8B77738A23CAA07E00789DA5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8B77738D23CAA09700789DA5 /* TeamsModel */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8B77738D23CAA09700789DA5 /* TeamsModel */ = {
+			isa = PBXGroup;
+			children = (
+				8B77738B23CAA09100789DA5 /* TeamsModelTest.swift */,
+			);
+			path = TeamsModel;
 			sourceTree = "<group>";
 		};
 		8B9F653123C23D2A0093FE10 /* Helpers */ = {
@@ -394,16 +451,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B77738223CA7FD100789DA5 /* TeamInfoViewController.swift in Sources */,
 				8B28541923BD5AF800140CC9 /* LoginViewController.swift in Sources */,
 				8B28541523BD5AF800140CC9 /* AppDelegate.swift in Sources */,
 				8B9F653C23C2641D0093FE10 /* DictionaryExtensions.swift in Sources */,
 				8B9F653F23C274990093FE10 /* State.swift in Sources */,
 				8B9F653023C23C4C0093FE10 /* LoginViewModel.swift in Sources */,
+				8B77737F23CA6F7200789DA5 /* TeamsViewModel.swift in Sources */,
 				8B9F653623C23D5C0093FE10 /* NetworkingConstants.swift in Sources */,
 				8B9F653923C24B600093FE10 /* Team.swift in Sources */,
 				8B28541F23BD5AF800140CC9 /* nhlstats.xcdatamodeld in Sources */,
 				8B563C1023C13CF30086CAE7 /* TeamsViewController.swift in Sources */,
+				8B77738423CA801000789DA5 /* TeamInfoViewModel.swift in Sources */,
 				8B28541723BD5AF800140CC9 /* SceneDelegate.swift in Sources */,
+				8B77737D23CA68BD00789DA5 /* TeamTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,7 +472,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B28542F23BD5AF900140CC9 /* nhlstatsTests.swift in Sources */,
+				8B77738E23CAA0A800789DA5 /* Team.swift in Sources */,
+				8B77738C23CAA09100789DA5 /* TeamsModelTest.swift in Sources */,
+				8B77738723CA8FEB00789DA5 /* TeamInfoViewModelTest.swift in Sources */,
+				8B77738823CAA02100789DA5 /* TeamInfoViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

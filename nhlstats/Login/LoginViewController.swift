@@ -32,6 +32,14 @@ class ViewController: UIViewController {
         self.performSegue(withIdentifier: "goToHome", sender: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? TeamsViewController {
+            let teamsViewModel: TeamsViewModel = TeamsViewModel()
+            vc.viewModel = teamsViewModel
+        }
+    }
+    
+    
     func showErrorMessage(error: String) {
         overlayView.isHidden = true
         activityIndicator.stopAnimating()
