@@ -21,13 +21,16 @@ class TeamInfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        teamNameLabel.text = viewModel.team.fullTeamName
-        winsCountLabel.text = String(viewModel.team.wins)
-        lossesCountLabel.text = String(viewModel.team.losses)
-        goalsPerGameLabel.text = String(format: "%.2f", viewModel.team.goalsPerGame)
-        shotsPerGameLabel.text = String(format: "%.2f", viewModel.team.shotsPerGame)
-        shootingPercentagePerGameLabel.text = String(format: "%.2f", viewModel.team.shootingPctg)
+        populateTeamStatistics()
+    }
+    
+    func populateTeamStatistics() -> Void {
+        teamNameLabel.text = viewModel.fullName
+        winsCountLabel.text = viewModel.winsCountLabel
+        lossesCountLabel.text = viewModel.lossesCountLabel
+        goalsPerGameLabel.text = viewModel.goalsPerGameLabel
+        shotsPerGameLabel.text = viewModel.shotsPerGameLabel
+        shootingPercentagePerGameLabel.text = viewModel.shootingPercentagePerGameLabel
     }
     
     @IBAction func returnToTeamInfoScreen(_ sender: Any) {
