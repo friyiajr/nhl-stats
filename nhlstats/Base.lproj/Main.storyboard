@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -374,6 +375,9 @@
                                 <state key="normal" title="View Roster">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="onViewRosterClicked:" destination="qZu-G4-54R" eventType="touchUpInside" id="WOg-qh-avF"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="gCI-JC-Vq4">
                                 <rect key="frame" x="0.0" y="51" width="414" height="288"/>
@@ -445,16 +449,159 @@
                         <outlet property="shotsPerGameLabel" destination="7JO-3V-QZK" id="aMk-DW-M4N"/>
                         <outlet property="teamNameLabel" destination="Myg-Uo-meq" id="W6y-g3-faF"/>
                         <outlet property="winsCountLabel" destination="Z8X-Ks-7zD" id="Xgi-ey-c7V"/>
+                        <segue destination="KUf-3y-w8N" kind="presentation" identifier="goToTeamRoster" modalPresentationStyle="fullScreen" id="eRp-yK-V5z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aoM-2c-bgv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1855.072463768116" y="133.92857142857142"/>
         </scene>
+        <!--Team Roster View Controller-->
+        <scene sceneID="Ouz-vk-k5P">
+            <objects>
+                <viewController id="KUf-3y-w8N" customClass="TeamRosterViewController" customModule="nhlstats" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Zh-43-fCc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ws-Vw-qej">
+                                <rect key="frame" x="16" y="64" width="48" height="48"/>
+                                <state key="normal" image="baseline_chevron_left_white_48pt_1x"/>
+                                <connections>
+                                    <action selector="goBackToTeamRoster:" destination="KUf-3y-w8N" eventType="touchUpInside" id="Dcf-cb-IP9"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Zjf-zg-oqx">
+                                <rect key="frame" x="93" y="69" width="228.5" height="54"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edmonton Oilers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybv-wl-S92">
+                                        <rect key="frame" x="0.0" y="0.0" width="228.5" height="34.5"/>
+                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019-2020 Roster" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDe-1T-bGC">
+                                        <rect key="frame" x="45.5" y="34.5" width="137" height="19.5"/>
+                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap in a player to view their stats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXI-ik-7Xa">
+                                <rect key="frame" x="54" y="143" width="306.5" height="24"/>
+                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xnB-gK-SSc">
+                                <rect key="frame" x="0.0" y="184.5" width="414" height="1"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="OYj-A6-QGQ"/>
+                                </constraints>
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0JH-Zd-G6J">
+                                <rect key="frame" x="42" y="193" width="330" height="683"/>
+                                <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Gye-eB-H2D">
+                                    <size key="itemSize" width="153" height="195"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="playerCell" id="Y9h-XS-Yfv" customClass="PlayerCollectionViewCell" customModule="nhlstats" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="153" height="195"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="L83-FG-WvX" customClass="PlayerCollectionViewCell" customModule="nhlstats" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="153" height="195"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wayne" translatesAutoresizingMaskIntoConstraints="NO" id="HCq-lA-eCB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="153" height="115.00000000000011"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="153" id="CBQ-c1-3gy"/>
+                                                        <constraint firstAttribute="height" constant="115" id="IJk-F5-13u"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xFt-fx-Jmf">
+                                                    <rect key="frame" x="18" y="126" width="116" height="51.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgp-g1-vBh">
+                                                            <rect key="frame" x="40.5" y="0.0" width="35" height="23"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wayne Gretzky" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTk-wB-0gZ">
+                                                            <rect key="frame" x="0.0" y="31" width="116" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="116" id="780-va-k5m"/>
+                                                        <constraint firstAttribute="height" constant="51.5" id="rAC-TH-7bQ"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="xFt-fx-Jmf" secondAttribute="bottom" constant="17.5" id="GQA-Se-xzc"/>
+                                                <constraint firstItem="HCq-lA-eCB" firstAttribute="leading" secondItem="L83-FG-WvX" secondAttribute="leading" id="O3L-M7-noe"/>
+                                                <constraint firstItem="xFt-fx-Jmf" firstAttribute="leading" secondItem="L83-FG-WvX" secondAttribute="leading" constant="18" id="QsC-Zo-DAV"/>
+                                                <constraint firstAttribute="trailing" secondItem="xFt-fx-Jmf" secondAttribute="trailing" constant="19" id="SLV-xC-02x"/>
+                                                <constraint firstItem="HCq-lA-eCB" firstAttribute="top" secondItem="L83-FG-WvX" secondAttribute="top" id="xuu-ZW-c7m"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="customSize" width="153" height="195"/>
+                                        <connections>
+                                            <outlet property="playerNameLabel" destination="jTk-wB-0gZ" id="8tZ-F3-hgu"/>
+                                            <outlet property="playerNumberLabel" destination="wgp-g1-vBh" id="j0g-0N-mmC"/>
+                                            <outlet property="teamImageView" destination="HCq-lA-eCB" id="3O7-A6-qPX"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="KUf-3y-w8N" id="19M-Ut-g5s"/>
+                                    <outlet property="delegate" destination="KUf-3y-w8N" id="Rx5-VB-S0j"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14901960784313725" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="xnB-gK-SSc" firstAttribute="leading" secondItem="7Zh-43-fCc" secondAttribute="leading" id="7W0-V5-KUp"/>
+                            <constraint firstItem="0JH-Zd-G6J" firstAttribute="leading" secondItem="yuM-tH-Lfs" secondAttribute="leading" constant="42" id="8yu-0y-WMg"/>
+                            <constraint firstItem="xnB-gK-SSc" firstAttribute="top" secondItem="vXI-ik-7Xa" secondAttribute="bottom" constant="17.5" id="Bmz-Np-57b"/>
+                            <constraint firstItem="xnB-gK-SSc" firstAttribute="centerX" secondItem="vXI-ik-7Xa" secondAttribute="centerX" id="C2K-S4-iYi"/>
+                            <constraint firstItem="Zjf-zg-oqx" firstAttribute="centerX" secondItem="7Zh-43-fCc" secondAttribute="centerX" id="GB8-Mx-I5Y"/>
+                            <constraint firstItem="8ws-Vw-qej" firstAttribute="top" secondItem="yuM-tH-Lfs" secondAttribute="top" constant="20" id="Lst-ej-Fe0"/>
+                            <constraint firstItem="0JH-Zd-G6J" firstAttribute="centerX" secondItem="7Zh-43-fCc" secondAttribute="centerX" id="Obs-me-awy"/>
+                            <constraint firstAttribute="bottom" secondItem="0JH-Zd-G6J" secondAttribute="bottom" constant="20" symbolic="YES" id="P5F-uu-jCB"/>
+                            <constraint firstItem="0JH-Zd-G6J" firstAttribute="top" secondItem="xnB-gK-SSc" secondAttribute="bottom" constant="7.5" id="epR-Ds-irZ"/>
+                            <constraint firstItem="vXI-ik-7Xa" firstAttribute="centerX" secondItem="7Zh-43-fCc" secondAttribute="centerX" id="hIi-hL-757"/>
+                            <constraint firstItem="Zjf-zg-oqx" firstAttribute="top" secondItem="yuM-tH-Lfs" secondAttribute="top" constant="25" id="hLG-sf-NNQ"/>
+                            <constraint firstItem="vXI-ik-7Xa" firstAttribute="top" secondItem="Zjf-zg-oqx" secondAttribute="bottom" constant="20" id="p18-wM-vGf"/>
+                            <constraint firstItem="8ws-Vw-qej" firstAttribute="leading" secondItem="yuM-tH-Lfs" secondAttribute="leading" constant="16" id="vFk-VS-eBt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yuM-tH-Lfs"/>
+                    </view>
+                    <connections>
+                        <outlet property="uiCollectionView" destination="0JH-Zd-G6J" id="2AS-Ww-oM3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fIS-om-yMc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2773.913043478261" y="134.59821428571428"/>
+        </scene>
     </scenes>
     <resources>
         <image name="baseline_chevron_left_white_48pt_1x" width="48" height="48"/>
         <image name="nhl-logo" width="291" height="254"/>
         <image name="oilers" width="295" height="309"/>
+        <image name="wayne" width="750" height="478"/>
     </resources>
 </document>

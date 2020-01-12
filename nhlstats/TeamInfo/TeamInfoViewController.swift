@@ -36,4 +36,25 @@ class TeamInfoViewController: UIViewController {
     @IBAction func returnToTeamInfoScreen(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func onViewRosterClicked(_ sender: Any) {
+        viewModel.retrieveRoster(
+            onSuccess: onTeamRosterRetrieved,
+            onFailure: handleTeamRetrievalError)
+    }
+    
+    func onTeamRosterRetrieved() -> Void {
+        performSegue(withIdentifier: "goToTeamRoster", sender: nil)
+    }
+    
+    func handleTeamRetrievalError(error: String) -> Void {
+        // TODO: ADD A DIALOG HERE IF THERE IS AN ERROR
+        print(error)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? TeamRosterViewController {
+            vc.viewModel = viewModel.rosterViewModel
+        }
+    }
 }
