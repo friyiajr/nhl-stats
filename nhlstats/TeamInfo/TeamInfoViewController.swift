@@ -48,6 +48,7 @@ class TeamInfoViewController: UIViewController {
     }
     
     func handleTeamRetrievalError(error: String) -> Void {
+        // TODO: ADD A DIALOG HERE IF THERE IS AN ERROR
         print(error)
     }
     
@@ -56,5 +57,4 @@ class TeamInfoViewController: UIViewController {
             vc.viewModel = viewModel.rosterViewModel
         }
     }
-    
 }
